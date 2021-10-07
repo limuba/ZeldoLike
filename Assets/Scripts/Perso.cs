@@ -10,19 +10,24 @@ public class Perso : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float maxSpeed;
 
+    [SerializeField] private float time;
+    [SerializeField] private float waitTime;
+
     private Vector2 direction;
-    private PersoControls controls;  //aled
+    private PersoControls controls;  
     private Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider2D;
     //private RigidBody2D rigidbody2D;
 
     private void OnEnable()
     {
-        controls = new PersoControls(); //aled
+        controls = new PersoControls(); 
         controls.Enable();
         controls.MoveHit.Move.performed += MoveOnPerformed;
         controls.MoveHit.Move.canceled += MoveOnCanceled;
-        //controls.MoveHit.Move.canceled += MoveOncanceled;
+        controls.MoveHit.Hit.performed += HitOnPerformed;
+        //controls.MoveHit.Move.canceled += HitOnCanceled;
         //controls.MoveHit.Hit.performed += HitPerformed;
 
     }
@@ -38,17 +43,35 @@ public class Perso : MonoBehaviour
         direction = Vector2.zero ;
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
     }
+    private void HitOnPerformed (InputAction.CallbackContext obj)
+    {
+        boxCollider2D.enabled = true;
+
+   
+        
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (boxCollider2D.enabled == true)
+        {
+            time += Time.deltaTime;
+
+            if (time > waitTime)
+            {
+                boxCollider2D.enabled = false;
+                time = time - waitTime;
+            }
+        }
     }
 
     private void FixedUpdate()
