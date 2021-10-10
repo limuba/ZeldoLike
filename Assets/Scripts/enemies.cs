@@ -5,16 +5,16 @@ using UnityEngine;
 public class enemies : MonoBehaviour
 {
     [SerializeField] private float speed;
-   // [SerializeField] private Transform spawn;
+    [SerializeField] private Transform spawner;
 
     private Transform target;
     public GameObject player;
-
-
+    private Rigidbody2D rigidbody2D;
 
     // Start is called before the first frame update
     void Start()
     {
+        rigidbody2D = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("target");
         target = player.transform;
         float step = speed * Time.deltaTime;
@@ -34,5 +34,11 @@ public class enemies : MonoBehaviour
         }
         */
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D colliderTriggered)
+    {
+        rigidbody2D.transform.position = spawner.position;
+
+    }
+
 }
