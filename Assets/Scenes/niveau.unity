@@ -50388,8 +50388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561ae624d86e2814d9fa7564cf31520e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  maxSpeed: 5
+  speed: 15
+  maxSpeed: 25
   time: 0
   waitTime: 0.3
 --- !u!50 &1318350768
@@ -50514,7 +50514,7 @@ Animator:
   m_GameObject: {fileID: 1318350766}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9512700a2ae2a2c419a73eb738d724f4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

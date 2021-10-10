@@ -19,6 +19,7 @@ public class Perso : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
     private Animator animator;
+    private bool walk;
     //private RigidBody2D rigidbody2D;
 
     private void OnEnable()
@@ -36,20 +37,23 @@ public class Perso : MonoBehaviour
     private void MoveOnPerformed (InputAction.CallbackContext obj)
     {
         direction = obj.ReadValue<Vector2>();
+        animator.SetBool("walk", true);
+       //boolean marche true
         //rigidbody2D.constraints = RigidbodyConstraints2D.None;
     }
     private void MoveOnCanceled (InputAction.CallbackContext obj)
     {
         direction = Vector2.zero;
+        animator.SetBool("walk", false);
+        //boolean marche false
         //rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
     }
     private void HitOnPerformed (InputAction.CallbackContext obj)
     {
+        animator.SetBool("attack", true);
+
         boxCollider2D.enabled = true;
         Debug.Log("hit");
-
-   
-        
     }
     
     // Start is called before the first frame update
@@ -74,6 +78,8 @@ public class Perso : MonoBehaviour
                 boxCollider2D.enabled = false;
                 time = time - waitTime;
                 Debug.Log("hitf");
+
+                animator.SetBool("attack", false);
             }
         }
     }
@@ -86,5 +92,12 @@ public class Perso : MonoBehaviour
         {
             rigidbody2D.AddForce(speed * direction);
         }
-    }
+
+        float playerdirectionx = rigidbody2D.velocity.x;
+        animator.SetFloat("Speedx", playerdirectionx);
+
+        float playerdirectiony = rigidbody2D.velocity.y;
+        animator.SetFloat("Speedy", playerdirectiony);
+
+    }    
 }
