@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -47923,7 +47923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1241422ef592012419e88c951b7eb717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 979934770}
 --- !u!1 &1043061908
 GameObject:
   m_ObjectHideFlags: 0
@@ -48367,7 +48366,7 @@ MonoBehaviour:
   - {fileID: 877066572547023232, guid: 00d42c3ae879a1749baa6a6c0f23cdd7, type: 3}
   - {fileID: 2601953481330727149, guid: c50057b8ae0bb7e4ab96baf58b81d27f, type: 3}
   - {fileID: 1738918084243282228, guid: 835d9aa5d8ab0ae4f8906d9015f7c40d, type: 3}
-  - {fileID: 2601953481330727149, guid: c50057b8ae0bb7e4ab96baf58b81d27f, type: 3}
+  - {fileID: 5537547481969718294, guid: aa763231718a1534f94fb246a60ea9a5, type: 3}
   time: 0
   waitTime: 1.5
 --- !u!1 &1318350766 stripped
@@ -48387,8 +48386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0492ae873d5646b28af44bbad9236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 0
 --- !u!114 &1318350768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48401,8 +48398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0492ae873d5646b28af44bbad9236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 0
 --- !u!4 &1318350770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2093833872274921283, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
