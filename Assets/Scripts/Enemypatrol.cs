@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemypatrol : MonoBehaviour
 {
+    /*
     public float speed;
     public Transform[] waypoints;
 
@@ -36,4 +37,5 @@ public class Enemypatrol : MonoBehaviour
             playerhealth.TakeDamage(1);
         }
     }
+    */
 }
