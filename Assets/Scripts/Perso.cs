@@ -20,7 +20,7 @@ public class Perso : MonoBehaviour
     private BoxCollider2D boxCollider2D;
     private Animator animator;
     private bool walk;
-    //private RigidBody2D rigidbody2D;
+    
 
     private void OnEnable()
     {
@@ -29,24 +29,18 @@ public class Perso : MonoBehaviour
         controls.MoveHit.Move.performed += MoveOnPerformed;
         controls.MoveHit.Move.canceled += MoveOnCanceled;
         controls.MoveHit.Hit.performed += HitOnPerformed;
-        //controls.MoveHit.Move.canceled += HitOnCanceled;
-        //controls.MoveHit.Hit.performed += HitPerformed;
-
     }
 
     private void MoveOnPerformed (InputAction.CallbackContext obj)
     {
         direction = obj.ReadValue<Vector2>();
         animator.SetBool("walk", true);
-       //boolean marche true
-        //rigidbody2D.constraints = RigidbodyConstraints2D.None;
+       
     }
     private void MoveOnCanceled (InputAction.CallbackContext obj)
     {
         direction = Vector2.zero;
         animator.SetBool("walk", false);
-        //boolean marche false
-        //rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
     }
     private void HitOnPerformed (InputAction.CallbackContext obj)
     {

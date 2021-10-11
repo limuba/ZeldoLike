@@ -17,7 +17,7 @@ public class enemies : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("target");
         target = player.transform;
-        float step = speed * Time.deltaTime;
+      
         
     }
 
@@ -26,19 +26,14 @@ public class enemies : MonoBehaviour
     {
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target.position, step);
-
-        /*
-        if (Vector2.Distance(transform.position, target.position) < 0.001f)
-        {
-           // target.position *= -1.0f;
-        }
-        */
     }
+
+   
 
     private void OnTriggerEnter2D(Collider2D colliderTriggered)
     {
         rigidbody2D.transform.position = spawner.position;
-
+        //destroy
     }
 
 }
