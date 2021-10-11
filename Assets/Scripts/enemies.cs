@@ -17,8 +17,7 @@ public class enemies : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("target");
         target = player.transform;
-      
-        
+                
     }
 
     // Update is called once per frame
@@ -32,8 +31,8 @@ public class enemies : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D colliderTriggered)
     {
-        rigidbody2D.transform.position = spawner.position;
-        //destroy
+        //rigidbody2D.transform.position = spawner.position;
+        Destroy(gameObject);
     }
 
 }

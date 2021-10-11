@@ -48320,6 +48320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1304346076}
+  - component: {fileID: 1304346077}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -48345,6 +48346,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304346077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304346075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948262fb11ebfc34fb1577e765719bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 346001741}
+  - {fileID: 457167240}
+  - {fileID: 878755347}
+  - {fileID: 318009883}
+  enemyPrefabs:
+  - {fileID: 877066572547023232, guid: 00d42c3ae879a1749baa6a6c0f23cdd7, type: 3}
+  - {fileID: 2601953481330727149, guid: c50057b8ae0bb7e4ab96baf58b81d27f, type: 3}
+  - {fileID: 1738918084243282228, guid: 835d9aa5d8ab0ae4f8906d9015f7c40d, type: 3}
+  - {fileID: 2601953481330727149, guid: c50057b8ae0bb7e4ab96baf58b81d27f, type: 3}
+  time: 0
+  waitTime: 1.5
 --- !u!1 &1318350766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2093833872274921311, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
@@ -48767,6 +48792,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2093833872274921281, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
+      propertyPath: m_LinearDrag
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2093833872274921283, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -48810,6 +48839,14 @@ PrefabInstance:
     - target: {fileID: 2093833872274921283, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093833872274921310, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093833872274921310, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
+      propertyPath: maxSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2093833872274921311, guid: 7e4a6f90f4ebbb145b47a249d5686dec, type: 3}
       propertyPath: m_Name
